@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mon Panier & Commande — PageTurner</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html" class="nav-logo">Page<span>Turner</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="produits.html">Catalogue</a></li>
+        <li><a href="commande.html" class="active">Mon Panier</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="commande.html" class="cart-icon">🛒<span id="cart-count"></span></a>
+        <div id="nav-auth"></div>
+        <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-banner">
+      <div class="container">
+        <h1>Mon <em>Panier</em></h1>
+        <p>Vérifiez votre commande avant de valider</p>
+      </div>
+    </section>
+
+    <section class="commande-section">
+      <div class="container">
+
+        <!-- SUCCESS MESSAGE (hidden by default) -->
+        <div id="order-success" style="display:none; text-align:center; padding:80px 24px;">
+          <p style="font-size:4rem; margin-bottom:20px;">🎉</p>
+          <h2 style="font-family:var(--font-display); font-size:2rem; color:var(--espresso); margin-bottom:12px;">
+            Commande confirmée !
+          </h2>
+          <p style="color:var(--muted); margin-bottom:32px;">
+            Merci pour votre commande. Vous recevrez une confirmation par email.
+          </p>
+          <a href="produits.html" class="btn-primary">Continuer mes achats →</a>
+        </div>
+
+        <!-- CART CONTENT -->
+        <div id="commande-content" class="commande-grid">
+
+          <!-- LEFT: Cart items -->
+          <div>
+            <div class="commande-card" id="cart-card">
+              <h2>Articles dans le panier</h2>
+              <div id="cart-items-list"></div>
+            </div>
+
+            <!-- Delivery info form -->
+            <div class="commande-card" style="margin-top:24px;" id="delivery-card">
+              <h2>Informations de livraison</h2>
+              <div class="alert alert-error" id="delivery-error"></div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="d-prenom">Prénom</label>
+                  <input type="text" id="d-prenom" placeholder="prenom" />
+                  <span class="field-error" id="err-d-prenom">Prénom requis.</span>
+                </div>
+                <div class="form-group">
+                  <label for="d-nom">Nom</label>
+                  <input type="text" id="d-nom" placeholder="nom" />
+                  <span class="field-error" id="err-d-nom">Nom requis.</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="d-email">Email</label>
+                <input type="email" id="d-email" placeholder="vous@email.com" />
+                <span class="field-error" id="err-d-email">Email invalide.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="d-tel">Téléphone</label>
+                <input type="tel" id="d-tel" placeholder="0555 123 456" />
+                <span class="field-error" id="err-d-tel">Numéro algérien invalide (0X XX XX XX XX).</span>
+              </div>
+
+              <div class="form-group">
+                <label for="d-adresse">Adresse complète</label>
+                <input type="text" id="d-adresse" placeholder="12 Rue des Martyrs, Bab El Oued" />
+                <span class="field-error" id="err-d-adresse">Adresse requise (min. 10 caractères).</span>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="d-wilaya">Wilaya</label>
+                  <input type="text" id="d-wilaya" placeholder="Alger" />
+                  <span class="field-error" id="err-d-wilaya">Wilaya requise.</span>
+                </div>
+                <div class="form-group">
+                  <label for="d-cp">Code postal</label>
+                  <input type="text" id="d-cp" placeholder="16000" />
+                  <span class="field-error" id="err-d-cp">Code postal invalide (5 chiffres).</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Summary -->
+          <div>
+            <div class="commande-card" id="summary-card">
+              <h2>Récapitulatif</h2>
+              <div id="order-summary"></div>
+              <div class="summary-row"><span>Livraison</span><span>Gratuite</span></div>
+              <div class="summary-total"><span>Total</span><span id="total-price">0 DA</span></div>
+              <button class="btn-form" style="margin-top:20px;" onclick="handleCommande()">
+                ✓ Valider la commande
+              </button>
+              <a href="produits.html" style="display:block; text-align:center; margin-top:14px; color:var(--muted); font-size:0.85rem;">
+                ← Continuer mes achats
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand">PageTurner</div>
+          <p>Votre librairie-papeterie en ligne depuis 2026.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="index.html">Accueil</a>
+          <a href="produits.html">Catalogue</a>
+        </div>
+        <div class="footer-col">
+          <h4>Compte</h4>
+          <a href="connexion.html">Connexion</a>
+          <a href="inscription.html">Inscription</a>
+        </div>
+      </div>
+      <p class="footer-copy">© 2026 PageTurner. Tous droits réservés. 📚</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="auth.js"></script>
+  <script src="covers.js"></script>
+  <script src="products.js"></script>
+  <script src="commande.js"></script>
+</body>
+</html>

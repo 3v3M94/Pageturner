@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inscription — PageTurner</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="../index.html" class="nav-logo">Page<span>Turner</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="produits.html">Catalogue</a></li>
+        <li><a href="commande.html">Mon Panier</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="commande.html" class="cart-icon">🛒<span id="cart-count"></span></a>
+        <div id="nav-auth"></div>
+        <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-form">
+    <div class="form-card">
+      <div class="form-logo">Page<span>Turner</span></div>
+      <h1 class="form-title">Créer un compte</h1>
+      <p class="form-subtitle">Rejoignez notre communauté de lecteurs</p>
+
+      <div class="alert alert-error" id="alert-error"></div>
+      <div class="alert alert-success" id="alert-success"></div>
+
+      <div id="inscription-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" placeholder="prenom" autocomplete="given-name" />
+            <span class="field-error" id="err-prenom">Prénom requis (min. 2 caractères).</span>
+          </div>
+          <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" placeholder="nom" autocomplete="family-name" />
+            <span class="field-error" id="err-nom">Nom requis (min. 2 caractères).</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Adresse email</label>
+          <input type="email" id="email" placeholder="vous@email.com" autocomplete="email" />
+          <span class="field-error" id="err-email">Adresse email invalide.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="motdepasse">Mot de passe</label>
+          <input type="password" id="motdepasse" placeholder="Minimum 8 caractères" autocomplete="new-password" />
+          <span class="field-error" id="err-motdepasse">Min. 8 caractères, une majuscule, un chiffre, un caractère spécial.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="confirm">Confirmer le mot de passe</label>
+          <input type="password" id="confirm" placeholder="Répétez votre mot de passe" autocomplete="new-password" />
+          <span class="field-error" id="err-confirm">Les mots de passe ne correspondent pas.</span>
+        </div>
+
+        <button class="btn-form" onclick="handleInscription()">Créer mon compte</button>
+      </div>
+
+      <p class="form-footer">
+        Déjà un compte ? <a href="connexion.html">Se connecter</a>
+      </p>
+    </div>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <script src="auth.js"></script>
+  <script src="inscription.js"></script>
+</body>
+</html>
