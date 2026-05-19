@@ -1,7 +1,6 @@
 // =============================================
 //  PageTurner — covers.js
 //  Génération de couvertures SVG embarquées
-//  (aucune dépendance réseau)
 // =============================================
 
 /**
