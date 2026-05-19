@@ -1,0 +1,82 @@
+============================================
+ PageTurner — Librairie & Papeterie en Ligne
+============================================
+
+DESCRIPTION DU SITE
+-------------------
+PageTurner est un mini site e-commerce dédié à la vente de livres
+(romans, science-fiction, non-fiction, jeunesse) et de papeterie.
+Le site propose un catalogue dynamique filtrable par catégorie,
+un système d'authentification simulé, un panier interactif et
+un formulaire de commande avec validation côté client.
+
+INSTRUCTIONS D'UTILISATION
+---------------------------
+1. Ouvrir le fichier index.html dans un navigateur moderne.
+2. Explorer le catalogue via la page Catalogue (filtrage par catégorie, recherche).
+3. Ajouter des articles au panier en cliquant sur "Ajouter au panier".
+4. Accéder au panier via l'icône 🛒 ou le menu "Mon Panier".
+5. Se connecter via la page Connexion ou créer un compte via Inscription.
+
+COMPTE DE DÉMONSTRATION
+------------------------
+Email    : admin@pageturner.dz
+Password : Admin123!
+
+STRUCTURE DU PROJET
+-------------------
+PageTurner/
+├── index.html              ← Page d'accueil
+├── content/
+│   ├── produits.html       ← Catalogue des produits
+│   ├── connexion.html      ← Page de connexion
+│   ├── commande.html       ← Panier et commande
+│   └── inscription.html    ← Page d'inscription
+├── style/
+│   └── main.css            ← Feuille de style globale
+├── javascript/
+│   ├── auth.js             ← Authentification & session (localStorage)
+│   ├── main.js             ← Logique page d'accueil
+│   ├── produits.js         ← Affichage & filtrage produits
+│   ├── inscription.js      ← Validation formulaire inscription
+│   ├── connexion.js        ← Logique de connexion
+│   ├── commande.js         ← Gestion panier & commande
+│   └── products.json       ← Base de données des produits
+├── images/                 ← (images locales si nécessaire)
+└── readme.txt              ← Ce fichier
+
+FONCTIONNALITÉS IMPLÉMENTÉES
+------------------------------
+✓ Affichage dynamique des produits (JSON + JS)
+✓ Filtrage par catégorie côté client
+✓ Recherche par titre/auteur
+✓ Authentification simulée (localStorage)
+✓ Validation des formulaires (RegEx)
+✓ Panier interactif (ajout/suppression/quantités)
+✓ Formulaire de commande validé côté client
+✓ Menu de navigation responsive
+✓ Design responsive (mobile/tablette/desktop)
+✓ Balises sémantiques HTML5
+✓ CSS et JS dans fichiers séparés
+
+MEMBRES DU GROUPE
+________________________________________
+----------------------------------------
+   Nom:     |   Prénom:   |   Groupe:
+________________________________________
+            |             |
+Lamari      |   Rachida   |     09
+            |             |
+Kerdous     |   Ouahiba   |     09 
+            |             |
+Ferrah      |   Sarra     |     03             
+            |             |
+Lounis      |   Wissam    |     02
+            |             |
+Moulai      |    Maria    |     03
+____________|_____________|_____________
+
+MODULE : Développement d'Applications Web
+Université Mouloud MAMMERI de Tizi-Ouzou
+Année universitaire : 2025/2026
+=========================================
